@@ -36,3 +36,4 @@ describe('ToDoApp', () => {
         expect(todoApp.state.todos[0].completed).toBe(true);
     });
 });
+
