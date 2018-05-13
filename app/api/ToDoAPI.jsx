@@ -22,5 +22,19 @@ module.exports = {
     //         return [];
     //     }
     // }
+    }, 
+    filterToDos: function(todos, showCompleted, searchText) {
+        var filteredToDos = todos;
+
+        // filter by showCompleted 
+        filteredToDos = filteredToDos.filter((todo)=> {
+            return !todo.completed || showCompleted;
+        });
+
+        // filter by searchText 
+
+        // sort toDos with non-completed first
+
+        return filteredToDos;
     }
 };
