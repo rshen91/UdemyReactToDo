@@ -78,5 +78,20 @@ describe('ToDoAPI', () => {
             var filteredToDos = ToDoAPI.filterToDos(todos, false, '');
             expect(filteredToDos.length).toBe(1);
         });
+
+        it('should sort by completed status', () => {
+            var filteredToDos = ToDoAPI.filterToDos(todos, true, '');
+            expect(filteredToDos[0].completed).toBe(false);
+        });
+
+        it('should sort by searchText', () => {
+            var filteredToDos = ToDoAPI.filterToDos(todos, true, 'some');
+            expect(filteredToDos.length).toBe(2);
+        });
+
+        it('should return all todos if searchText is empty', () => {
+            var filteredToDos = ToDoAPI.filterToDos(todos, true, '');
+            expect(filteredToDos.length).toBe(3);
+        });
     }); 
 });
